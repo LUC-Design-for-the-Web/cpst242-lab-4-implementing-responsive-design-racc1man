@@ -1,7 +1,14 @@
 <!DOCTYPE html>
+<!--Rocio Chavez-->
+<!--I think the site would improve at a smaller screen if the background image would follow the text. The image duplicates.-->   
 <html>
     <head>
         <title>MPLS Dogboarding </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="lab 4 responsive design of webpage">
+        <meta name="keywords" content="adding media query, images, and .etc">
+        <meta name="author" content="Rocio Chavez">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body{
                 font-family: 'Montserrat', sans-serif;
@@ -14,6 +21,30 @@
                 height: 100vh;
                 
             }
+
+            #container aside{
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 325px; 
+            height: 350px;
+            padding: 10px;
+            margin-top: 4%; 
+            margin-bottom: 4%; 
+            margin-right: 2%; 
+            margin-left: 2%;
+            background-color:#ffffffcf;
+            border-radius: 10px;
+       }
+
+            #flexcontainer{
+            display: flex;
+            grid-area: main;
+            flex-wrap: wrap;
+            width: 100%;
+            background-image: url(./img/dog_bg.jpeg);
+            background-position: center center;
+            background-size: cover;
+            }     
 
             header{
                 grid-column-start: 1;
@@ -35,8 +66,8 @@
                 grid-row-start: 3;
                 grid-row-end: -1;
                 padding-top: 40px;
-             
-            }
+            } 
+           
 
             header img{
                 width: 20%;
@@ -46,26 +77,11 @@
                 min-width: 250px;
             }
 
-            #flexcontainer{
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                background-image: url(img/dog_bg.jpeg);
-                background-size: 100%;
-                background-position: center;
-            }
-            aside{
-                flex: 1 0 325px;
-                height: 275px;
-                margin: 4% 2%;
-                padding: 10px;
-                background-color: #ffffffcf;
-                border-radius: 10px;
-            }
             #copyright{
                 width: 275px;
                 margin:auto;
             }
+            
             #location_button {
                 display: none;
                 flex: 1 0 300px;
@@ -78,6 +94,38 @@
                 border-radius: 10px;
                 background-color: #000000dc;
             }
+
+            @media screen and (max-width: 1024px){
+            aside{
+                height: auto;
+            }
+            
+            #flexcontainer{
+               background-size: auto;
+            }    
+
+            @media screen and (max-width: 768px){
+            #flexcontainer{
+               background-image: url(/img/dog_bg_768.jpg);
+            }
+
+            aside{
+                background-color: #000000cf;
+                color: white;
+                background-position: center;
+                
+           
+            #location_button {
+                display: block;
+            }
+
+            #location_button:hover{
+                background-color: #ff4500bd;
+                height: 325px;
+                color: white;
+                transition: all .2s ease-in-out;
+            }
+        }    
         </style>
     </head>
     <body>
